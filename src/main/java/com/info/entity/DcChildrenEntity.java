@@ -15,20 +15,18 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="DC_CASES")
-public class DataCollectionCase {
-	
+@Table(name="DC_CHILDRENS")
+public class DcChildrenEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer caseId;
-	private Integer caseNum;
-	private Integer appId;
-	private Integer planId;
+	private Integer childId;
+	private Long caseNum;
+	private LocalDate childDob;
+	private Long childSsn;
 	@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	private String createdBy;
 	private String updatedBy;
-	
 }

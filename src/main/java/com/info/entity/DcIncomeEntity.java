@@ -15,14 +15,14 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="DC_CHILDRENS")
-public class DataCollectionChildrens {
+@Table(name="DC_INCOME")
+public class DcIncomeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer childrenId;
-	private Integer caseNum;
-	private Integer childrenDob;
-	private Long childrenSsn;
+	private Integer incomeId;
+	private Long caseNum;
+	private Double empIncome;
+	private Double propertyIncome;
 	@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp

@@ -14,15 +14,18 @@ import org.hibernate.annotations.UpdateTimestamp;
 import lombok.Data;
 
 @Entity
+@Table(name="CITIZEN_APPS")
 @Data
-@Table(name="DC_EDUCATION")
-public class DataCollectionEducation {
+public class CitizenAppEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer eduId;
-	private Integer caseNum;
-	private String highestQualification;
-	private Integer gradutionYear;
+	private Integer appId;
+	private String fullname;
+	private String email;
+	private Long phno;
+	private String gender;
+	private Long ssn;
+	private String stateName;
 	@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp

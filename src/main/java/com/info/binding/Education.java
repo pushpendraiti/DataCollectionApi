@@ -3,10 +3,10 @@ package com.info.binding;
 import lombok.Data;
 
 @Data
-public class EducationDetails {
+public class Education {
 
-	private Integer caseNum;
+	private Integer eduId;
+	private Long caseNum;
 	private String highestQualification;
 	private Integer gradutionYear;
-	//private String universityName;
 }
