@@ -20,8 +20,9 @@ public class DcCaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer caseId;
+	
 	private Long caseNum;
+	//private Integer caseId;
 	private Integer appId;
 	private Integer planId;
 	@CreationTimestamp
