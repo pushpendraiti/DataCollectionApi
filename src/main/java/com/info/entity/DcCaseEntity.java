@@ -25,11 +25,11 @@ public class DcCaseEntity {
 	//private Integer caseId;
 	private Integer appId;
 	private Integer planId;
-	@CreationTimestamp
+	/*@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	private String createdBy;
 	private String updatedBy;
-	
+	*/
 }

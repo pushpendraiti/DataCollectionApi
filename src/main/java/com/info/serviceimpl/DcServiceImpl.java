@@ -1,7 +1,9 @@
 package com.info.serviceimpl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.info.binding.Child;
+import com.info.binding.ChildRequest;
 import com.info.binding.DcSummary;
 import com.info.binding.Education;
 import com.info.binding.Income;
@@ -57,13 +60,14 @@ public class DcServiceImpl implements DcService {
 	}
 
 	@Override
-	public List<String> getPlanNames() {
+	public Map<Integer,String> getPlanNames() {
 		List<PlanEntity> findAll = planRepo.findAll();
-		List<String> plans=new ArrayList<>();
+		Map<Integer,String> planMap=new HashMap<>();
+		
 		for(PlanEntity entity:findAll) {			
-			plans.add(entity.getPlanName());
+			planMap.put(entity.getPlanId(), entity.getPlanName());
 		}
-		return plans;
+		return planMap;
 	}
 
 	@Override
@@ -96,16 +100,16 @@ public class DcServiceImpl implements DcService {
 		eduRepo.save(entity);
 		return education.getCaseNum();
 	}
-
 	@Override
-	public Long saveChildrens(List<Child> childs) {
+	public Long saveChildrens(ChildRequest request) {
 		
+		List<Child> childs = request.getChilds();
 		for(Child c:childs) {
 			DcChildrenEntity entity = new DcChildrenEntity();
-			BeanUtils.copyProperties(childs, entity);
+			BeanUtils.copyProperties(c, entity);
 			childRepo.save(entity);
 		}
-		return childs.get(0).getCaseNum();
+		return request.getCaseNum();
 	}
 
 	@Override

@@ -23,10 +23,12 @@ public class DcEducationEntity {
 	private Long caseNum;
 	private String highestQualification;
 	private Integer gradutionYear;
-	@CreationTimestamp
+	private String universityName;
+	/*@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	private String createdBy;
 	private String updatedBy;
+	*/
 }

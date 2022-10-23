@@ -20,13 +20,15 @@ public class DcChildrenEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer childId;
-	private Long caseNum;
-	private LocalDate childDob;
+	private String childName;
+	private Integer childAge;	
 	private Long childSsn;
-	@CreationTimestamp
+	private Long caseNum;	
+	/*@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	private String createdBy;
 	private String updatedBy;
+	*/
 }

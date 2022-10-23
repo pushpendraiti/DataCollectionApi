@@ -26,10 +26,11 @@ public class CitizenAppEntity {
 	private String gender;
 	private Long ssn;
 	private String stateName;
-	@CreationTimestamp
+	/*@CreationTimestamp
 	private LocalDate createdDate;
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	private String createdBy;
 	private String updatedBy;
+	*/
 }
